@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    /* Background */
+    .contact {
+      position: relative;
+      min-height: 100vh;
+      padding: 50px 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216") no-repeat center/cover;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 2s ease;
+    }
+
+    .content h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      margin-top: 30px;
+      gap: 40px;
+    }
+
+    /* Contact Info */
+    .contactInfo {
+      width: 50%;
+    }
+
+    .box {
+      display: flex;
+      margin: 20px 0;
+      animation: slideLeft 1.5s ease;
+    }
+
+    .icon {
+      min-width: 60px;
+      height: 60px;
+      background: #00bcd4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 25px;
+      color: #fff;
+    }
+
+    .text {
+      margin-left: 20px;
+      color: #fff;
+    }
+
+    /* Form */
+    .contactForm {
+      width: 50%;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      animation: slideRight 1.5s ease;
+    }
+
+    .contactForm h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .inputBox {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .inputBox input,
+    .inputBox textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #333;
+      outline: none;
+      resize: none;
+    }
+
+    .inputBox span {
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      pointer-events: none;
+      transition: 0.5s;
+      color: #666;
+    }
+
+    .inputBox input:focus ~ span,
+    .inputBox input:valid ~ span,
+    .inputBox textarea:focus ~ span,
+    .inputBox textarea:valid ~ span {
+      transform: translateY(-20px);
+      font-size: 12px;
+      color: #00bcd4;
+    }
+
+    .inputBox input[type="submit"] {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .inputBox input[type="submit"]:hover {
+      background: #0097a7;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideLeft {
+      from {transform: translateX(-100px); opacity: 0;}
+      to {transform: translateX(0); opacity: 1;}
+    }
+
+    @keyframes slideRight {
+      from {transform: translateX(100px); opacity: 0;}
+      to {transform: translateX(0); opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .contactInfo,
+      .contactForm {
+        width: 100%;
+      }
+
+      .contact {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="contact">
+  <div class="content">
+    <h2>Contact Us</h2>
+    <p>
+      Our mission is to amplify your brand's digital footprint by creating meaningful connections,
+      boosting visibility, and delivering ROI-focused strategies.
+    </p>
+  </div>
+
+  <div class="container">
+
+    <div class="contactInfo">
+
+      <div class="box">
+        <div class="icon">📍</div>
+        <div class="text">
+          <h3>Address</h3>
+          <p>Siwan</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icon">📞</div>
+        <div class="text">
+          <h3>Phone</h3>
+          <p>7003156313</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icon">✉️</div>
+        <div class="text">
+          <h3>Email</h3>
+          <p>muntzir@email.com</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contactForm">
+      <form>
+        <h2>Send Message</h2>
+
+        <div class="inputBox">
+          <input type="text" required>
+          <span>Full Name</span>
+        </div>
+
+        <div class="inputBox">
+          <input type="email" required>
+          <span>Email</span>
+        </div>
+
+        <div class="inputBox">
+          <textarea required></textarea>
+          <span>Type your Message...</span>
+        </div>
+
+        <div class="inputBox">
+          <input type="submit" value="Send">
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
